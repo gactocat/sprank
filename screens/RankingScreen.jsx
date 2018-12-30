@@ -1,19 +1,32 @@
-import React from 'react'
-import { Button, StyleSheet, Text, View } from 'react-native'
+import React from 'react';
+import {
+  Button, StyleSheet, Text, View,
+} from 'react-native';
 import PropTypes from 'prop-types';
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
 
 export default class RankingScreen extends React.Component {
   static navigationOptions = {
     title: 'Ranking',
   }
+
   static propTypes = {
     navigation: PropTypes.shape({
       navigate: PropTypes.func.isRequired,
-    })
+    }).isRequired,
   }
 
   render() {
-    const { navigate } = this.props.navigation;
+    const { navigation } = this.props;
+    const { navigate } = navigation;
     return (
       <View style={styles.container}>
         <Text>Ranking page!</Text>
@@ -26,15 +39,6 @@ export default class RankingScreen extends React.Component {
           onPress={() => navigate('Weapon', { name: 'Jane' })}
         />
       </View>
-    )
+    );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-})

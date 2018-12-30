@@ -1,8 +1,4 @@
 {
-  "extends": [
-    "standard",
-    "eslint:recommended",
-    "plugin:react/recommended"
-  ],
+  "extends": "airbnb",
   "parser": "babel-eslint"
 }
